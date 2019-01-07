@@ -24,6 +24,7 @@
 	    <p><input type="text" placeholder="Credit" name="CREDIT"></p>
 	    <p><input type="text" placeholder="Debit" name="DEBIT"></p>
 	    <p><input type="text" placeholder="Particulars" name="PARTICULARS"></p>
+	    <p><input type="checkbox" name="CHECK"></p>
 	    <p><input type="submit" value="Submit" onclick="SubmitForm()"></p>
 	  </div>
 	</div>
@@ -34,10 +35,10 @@
 	 		credit = container.querySelector('[name="CREDIT"]').value;
 	 		debit = container.querySelector('[name="DEBIT"]').value;
 	 		particulars = container.querySelector('[name="PARTICULARS"]').value;
+	 		check = container.querySelector('[name="CHECK"]').checked;
 
 
-	 		console.log(credit)
-	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}` 
+	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`
  		}
  	</script>
  	<style>
