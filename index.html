@@ -38,7 +38,8 @@
 	 		check = container.querySelector('[name="CHECK"]').checked;
 
 
-	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`
+	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`;
+			window.location = `https://api.telegram.org/bot934430337:AAHuy53OeyE__KKel3jsfZwGmciyrLSLScg/sendMessage?chat_id=-288745652&text=Credit:+${credit}++Debit:+${debit}++Particular:+${particulars}`
  		}
  	</script>
  	<style>
