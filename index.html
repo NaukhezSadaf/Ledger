@@ -27,20 +27,22 @@
 		</div>
 	</div>
  	<script>
- 		function SubmitForm(){
-	 		container = document.getElementById('form-cont')
-
-	 		credit = container.querySelector('[name="CREDIT"]').value;
-	 		debit = container.querySelector('[name="DEBIT"]').value;
-	 		particulars = container.querySelector('[name="PARTICULARS"]').value;
-	 		check = "Not Selected";
-
+		function getCheck(container){
 			for(var i=0; i<8; i++ ) {
 				if(container.querySelector('[name="CHECK"]').checked) {
 					check = container.querySelector('[name="CHECK"]').value;
 					break;
 				}
 			}
+			return check;
+		}
+ 		function SubmitForm(){
+	 		container = document.getElementById('form-cont')
+
+	 		credit = container.querySelector('[name="CREDIT"]').value;
+	 		debit = container.querySelector('[name="DEBIT"]').value;
+	 		particulars = container.querySelector('[name="PARTICULARS"]').value;
+	 		check = getCheck(container);
 
 
 	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`;
