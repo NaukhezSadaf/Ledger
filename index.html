@@ -27,17 +27,6 @@
 		</div>
 	</div>
  	<script>
-		function getCheck(){
-			for(var i=1; i<=8; i++ ) {
-				var id = i.toString();
-				var element = document.getElementById(id);
-				if(element.checked) {
-					check = element.value;
-					break;
-				}
-			}
-			return check;
-		}
  		function SubmitForm(){
 	 		container = document.getElementById('form-cont')
 
@@ -49,6 +38,17 @@
 
 	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`;
  		}
+		 function getCheck(){
+			for(var i=1; i<=8; i++ ) {
+				var id = i.toString();
+				var element = document.getElementById(id);
+				if(element.checked) {
+					check = element.value;
+					break;
+				}
+			}
+			return check;
+		}
  	</script>
  	<style>
 			body {
