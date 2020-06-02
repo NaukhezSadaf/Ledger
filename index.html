@@ -14,23 +14,25 @@
 			<p><input type="text" placeholder="Debit" name="DEBIT"></p>
 			<p><input type="text" placeholder="Particulars" name="PARTICULARS"></p>
 			<div class="radio-wrap">
-				<p><input type="checkbox" value="Cash" name="CHECK">Cash</p>
-				<p><input type="checkbox" value="PhonePe" name="CHECK">PhonePe</p>
-				<p><input type="checkbox" value="PayTm" name="CHECK">PayTm</p>
-				<p><input type="checkbox" value="Amazon" name="CHECK">Amazon</p>
-				<p><input type="checkbox" value="Flipkart" name="CHECK">Flipkart</p>
-				<p><input type="checkbox" value="GPay" name="CHECK">GPay</p>
-				<p><input type="checkbox" value="Card" name="CHECK">Card</p>
-				<p><input type="checkbox" value="Net Banking" name="CHECK">Net Banking</p>
+				<p><input type="checkbox" id="1" value="Cash" name="CHECK">Cash</p>
+				<p><input type="checkbox" id="2" value="PhonePe" name="CHECK">PhonePe</p>
+				<p><input type="checkbox" id="3" value="PayTm" name="CHECK">PayTm</p>
+				<p><input type="checkbox" id="4" value="Amazon" name="CHECK">Amazon</p>
+				<p><input type="checkbox" id="5" value="Flipkart" name="CHECK">Flipkart</p>
+				<p><input type="checkbox" id="6" value="GPay" name="CHECK">GPay</p>
+				<p><input type="checkbox" id="7" value="Card" name="CHECK">Card</p>
+				<p><input type="checkbox" id="8" value="Net Banking" name="CHECK">Net Banking</p>
 			</div>
 			<p><input type="submit" value="Submit" onclick="SubmitForm()"></p>
 		</div>
 	</div>
  	<script>
-		function getCheck(container){
-			for(var i=0; i<8; i++ ) {
-				if(container.querySelector('[name="CHECK"]').checked) {
-					check = container.querySelector('[name="CHECK"]').value;
+		function getCheck(){
+			for(var i=1; i<=8; i++ ) {
+				var id = i.toString();
+				var element = document.getElementById(id);
+				if(element.checked) {
+					check = element.value;
 					break;
 				}
 			}
@@ -42,7 +44,7 @@
 	 		credit = container.querySelector('[name="CREDIT"]').value;
 	 		debit = container.querySelector('[name="DEBIT"]').value;
 	 		particulars = container.querySelector('[name="PARTICULARS"]').value;
-	 		check = getCheck(container);
+	 		check = getCheck();
 
 
 	 		window.location = `https://script.google.com/macros/s/AKfycbysdXfnRNjfKF8lhEzKHFqHd6UjNUlUwUjGahYGChxcvGNqEvED/exec?credit=${credit}&debit=${debit}&particulars=${particulars}&check=${check}`;
